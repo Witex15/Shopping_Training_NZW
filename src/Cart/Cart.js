@@ -7,23 +7,8 @@ module.exports = class Cart {
     constructor(items) {
         this.#items = items;
     }
-
-    get total() {
-        if (this.#items == null) throw new EmptyCartException();
-        let total = 0;
-        for (let item of this.#items) {
-            total += item.total;
-        }
-        return total;
-    }
-
-    count() {
-        if (this.#items == null) throw new EmptyCartException();
-        let count = 0;
-        for (let item of this.#items) {
-            count += item.quantity;
-        }
-        return count;
+    get items() {
+        return this.#items;
     }
     //endregion public methods
 
