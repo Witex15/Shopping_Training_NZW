@@ -16,6 +16,9 @@ module.exports = class Cart {
         return this.#items;
     }
     get total() {
+        if (this.#items == null) {
+            throw new EmptyCartException();
+        }
         return this.getSum();
     }
     //endregion public methods
