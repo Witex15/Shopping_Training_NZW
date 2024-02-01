@@ -31,5 +31,8 @@ module.exports = class Cart {
         }
         return sum;
     }
+    count() {
+        return this.#items.length;
+    }
     //endregion private methods
 }
