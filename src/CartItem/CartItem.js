@@ -40,7 +40,8 @@ module.exports = class CartItem {
     }
 
     set quantity(value) {
-        throw new Error();
+        this.#quantity = value;
+        this.#total = this.#quantity * this.#price;
     }
 
     get price() {
