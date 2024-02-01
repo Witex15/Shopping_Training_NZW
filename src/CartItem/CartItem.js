@@ -50,6 +50,7 @@ module.exports = class CartItem {
     }
 
     set price(value) {
+        if (value < 10) throw new InvalidPriceException();
         this.#price = value;
         this.#total = this.#quantity * this.#price;
     }
