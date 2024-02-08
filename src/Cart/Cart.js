@@ -43,5 +43,11 @@ module.exports = class Cart {
         }
         return count;
     }
+    add(items) {
+        if (this.#items == null) this.#items = [];
+        items.forEach(item => {
+            this.#items.push(item);
+        });
+    }
     //endregion private methods
 }
