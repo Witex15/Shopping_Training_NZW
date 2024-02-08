@@ -32,7 +32,11 @@ module.exports = class Cart {
         return sum;
     }
     count() {
-        return this.#items.length;
+        let count = 0;
+        for (let i = 0; i < this.items.length; i++) {
+            count += this.items[i].quantity;
+        }
+        return count;
     }
     //endregion private methods
 }
