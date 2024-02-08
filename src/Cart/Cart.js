@@ -1,4 +1,5 @@
 const EmptyCartException = require("./EmptyCartException");
+const UpdateCartException = require("./UpdateCartException");
 module.exports = class Cart {
     //region private attributes
     #items;
@@ -45,6 +46,8 @@ module.exports = class Cart {
     }
     add(items) {
         if (this.#items == null) this.#items = [];
+        if (items == null && this.#items.length === 0) throw new UpdateCartException();
+
         items.forEach(item => {
             this.#items.push(item);
         });
