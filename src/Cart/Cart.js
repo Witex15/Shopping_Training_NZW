@@ -38,6 +38,9 @@ module.exports = class Cart {
         for (let i = 0; i < this.items.length; i++) {
             count += this.items[i].quantity;
         }
+        if (count === 0) {
+            throw new EmptyCartException();
+        }
         return count;
     }
     //endregion private methods
